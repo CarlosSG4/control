@@ -1,0 +1,24 @@
+<!--carga de archivo base-->
+{% extends "core/base.html" %}
+<!--Libreria para aguilizar el acomodo del formulario-->
+{% load crispy_forms_tags %}
+<!--Bloque de contenido-->
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group"> 
+                <legend class="border-bottom mb-4">Unete Ahora</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Resgitrate</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted"> 
+                Cuentas con una cuenta? <a class="ml-2" href="{% url 'login'  %}">Inicia Sesion</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}
