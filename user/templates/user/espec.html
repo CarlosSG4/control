@@ -1,11 +1,11 @@
 {% extends "core/base.html" %}
 {% load static %}
 {% block content %}
-<h1>Consultorios</h1>
-    {% for especialidades in posts %}
+<h1>Especialidades</h1>
+    {% for especialidades in post %}
             <div class="row">
 
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3" style="max-width: 1000px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">
                             <img src="{{ especialidades.image.url }}" class="card-img" >
@@ -14,7 +14,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{especialidades.title}}</h5>
                                 <p class="card-text">{{especialidades.content}}</p>
-                                <p class="card-text"><small class="text-muted">{{ especialidades.date_posted|date:"F d, Y" }} <a href="#" class="btn btn-dark bg-steel">Ver mas...</a></small></p>
+                                <p class="card-text"><small class="text-muted">{{ especialidades.date_posted|date:"F d, Y" }} 
+                                <a href="" class="btn btn-dark bg-steel">Consultorio</a></small></p>
                             </div>
                         </div>
                     </div>
