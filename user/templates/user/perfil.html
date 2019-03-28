@@ -5,6 +5,7 @@
         <div class="media">
             <img class="rounded-circle account-img" src= "{{ user.perfiles.image.url }}" >
             <div class="media-body">
+                <p class="text-secondary"> Usuario: {{ user.username }}</p>        
                 <p class="text-secondary"> Nombre: {{ user.perfiles.nombre }}  {{ user.perfiles.apellidos }}</p>
                 <p class="text-secondary"> Sexo: {{ user.perfiles.genero }} </p>
                 <p class="text-secondary"> Fecha de Nacimiento: {{ user.perfiles.fecha_nacimiento }} </p>
@@ -14,8 +15,8 @@
                 <p class="text-secondary"> Direccion: {{ user.perfiles.direccion }} </p>
                 <p class="text-secondary"> Municipio: {{ user.perfiles.municipio }} </p>
                 <p class="text-secondary"> Estado: {{ user.perfiles.estado }} </p>
+                <a href="{% url 'Uprofile' %}" class="btn btn-dark bg-steel">Editar Perfil</a>
             </div>
         </div>
     </div>
-    
 {% endblock content %}

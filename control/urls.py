@@ -25,8 +25,10 @@ from  doctores import views as doctores_views
 urlpatterns = [
     path('', views.home, name="core-home"),
     path('registro/', user_views.register, name='registro'), 
-    path('perfil/', user_views.profile, name='profile'),
-    path('doctor/', doctores_views.medicos, name='doctores'),
+    path('Uperfil/', user_views.profile, name='Uprofile'),
+    path('perfil/', user_views.perfil, name='profile'),
+    path('doctor/', doctores_views.doctores, name='doctores'),
+    path('consul/', doctores_views.consultorio, name='consultorio'),
     path('especialidades/', user_views.especialidades, name='especialidades'),
     path('login/', auth_views.LoginView.as_view(template_name='user/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'), name='logout'),

@@ -1,33 +1,38 @@
 {% extends "core/base.html" %}
-{% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
-    <h1>Doctores</h1> 
-
-    <table class="table">
+<h1>Doctores</h1>
+<table class="table">
     <thead>
         <tr>
-        <th scope="col">ID</th>
+        <th scope="col">Foto</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Apellidos</th>
+        <th scope="col">A.Paterno</th>
+        <th scope="col">A.Materno</th>
         <th scope="col">Sexo</th>
         <th scope="col">Fecha de Nacimiento</th>
         <th scope="col">Numero</th>
         <th scope="col">Cedula Profesional</th>
         <th scope="col">Email</th>
+        <th scope="col">Agendar Cita</th>
         
         </tr>
     </thead>
     <tbody>
+    {% for doctores in pos %}
         <tr>
-        <td>{{ user.medicos.id }}</td>
-        <td>{{ user.medicos.nombre }}</td>
-        <td>{{ user.medicos.apellidos }}</td>
-        <td>{{ user.medicos.genero }}</td>
-        <td>{{ user.medicos.fecha_nacimiento }}</td>
-        <td>{{ user.medicos.numero_celular }}</td>
-        <td>{{ user.medicos.cedula }}</td>
-        <td>{{ user.medicos.email }}</td>
+        <td><img src="{{ doctores.image.url }}" class="card-img" ></td>
+        <td>{{doctores.name}}</td>
+        <td>{{doctores.apaterno}}</td>
+        <td>{{doctores.amaterno}}</td>
+        <td>{{doctores.genero}}</td>
+        <td>{{doctores.fecha_nacimiento}}</td>
+        <td>{{doctores.numero_celular}}</td>
+        <td>{{doctores.cedula}}</td>
+        <td>{{doctores.email}}</td>
+        <td><a href="" class="btn btn-dark bg-steel">Agendar</a></td>
         </tr>
+    {% endfor %}
     </tbody>
-    </table>
+</table>
 {% endblock content %}

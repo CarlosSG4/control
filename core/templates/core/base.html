@@ -36,7 +36,7 @@
             <div class="navbar-nav">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Perfil</a>
-                <a class="nav-item nav-link" href="#">Consultorios</a>
+                <a class="nav-item nav-link" href="{% url 'consultorio' %}">Consultorios</a>
                 <a class="nav-item nav-link" href="{% url 'doctores' %}">Doctores</a>
                 <a class="nav-item nav-link" href="{% url 'especialidades' %}">Especialidades</a>
                 <a class="nav-item nav-link" href="#">Agendar Cita</a>

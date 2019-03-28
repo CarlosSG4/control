@@ -2,7 +2,7 @@
 {% block content %}
     <h3>Bienvenido al sistema de consultas en linea</h3>
     {% if user.is_authenticated %}
-        
+        <h2> {{ user.username }}</h2>
     {% else %}
         <p>Por favor si tienes una cuenta inicia sesion</p>
         <p>En caso de no contar con una cuenta registrate es GRATIS!!</p>
