@@ -30,7 +30,11 @@
         <td>{{doctores.numero_celular}}</td>
         <td>{{doctores.cedula}}</td>
         <td>{{doctores.email}}</td>
-        <td><a href="" class="btn btn-dark bg-steel">Agendar</a></td>
+        {% if  user.is_staff %}
+            <td><a href="" class="btn btn-dark bg-steel">Editar</a></td>
+        {% else %}
+            <td><a href="" class="btn btn-dark bg-steel">Agendar</a></td>
+        {% endif %}
         </tr>
     {% endfor %}
     </tbody>
