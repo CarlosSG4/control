@@ -39,8 +39,9 @@
                 <a class="nav-item nav-link" href="{% url 'consultorio' %}">Consultorios</a>
                 <a class="nav-item nav-link" href="{% url 'doctores' %}">Doctores</a>
                 <a class="nav-item nav-link" href="{% url 'especialidades' %}">Especialidades</a>
-                <a class="nav-item nav-link" href="#">Agendar Cita</a>
-                <a class="nav-item nav-link" href="{% url 'logout' %}">Cierra Sesión</a>
+                <a class="nav-item nav-link" href="{% url 'agendar' %}">Agendar Cita</a>
+                <a class="nav-item nav-link" href="{% url 'citas' %}">Mis Citas</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Cierra Sesión</a>               
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Inicia Sesión</a>
                 <a class="nav-item nav-link" href="{% url 'registro' %}">Register</a>

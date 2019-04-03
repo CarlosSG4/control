@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import perfiles
+from .models import perfiles, Agendar_cita
 
 
 class UserRegisterForm(UserCreationForm):
@@ -13,7 +13,6 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserUpdateForm(forms.ModelForm):
-
     class Meta:
         model = User
         fields = ['username']
@@ -22,5 +21,9 @@ class PerfilesUpdateForm(forms.ModelForm):
     class Meta:
         model = perfiles
         fields = ['nombre','apellidos','genero', 'email', 'fecha_nacimiento','numero_celular','curp',
-        'direccion','municipio','estado','image'
-        ]
+        'direccion','municipio','estado','image']
+class UserAgendaForm(forms.ModelForm):
+    class Meta:
+        model = Agendar_cita
+        fields = ['nombre','apellidos','curp', 'genero', 'fecha','email','direccion',
+        'municipio','estado','especialidad', 'doctor', 'consultorio', 'Turno', 'author']   

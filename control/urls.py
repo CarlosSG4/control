@@ -20,15 +20,16 @@ from core import views
 from user import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
-from  doctores import views as doctores_views
 
 urlpatterns = [
     path('', views.home, name="core-home"),
     path('registro/', user_views.register, name='registro'), 
     path('Uperfil/', user_views.profile, name='Uprofile'),
     path('perfil/', user_views.perfil, name='profile'),
-    path('doctor/', doctores_views.doctores, name='doctores'),
-    path('consul/', doctores_views.consultorio, name='consultorio'),
+    path('agendar/', user_views.agendar, name='agendar'),
+    path('doctor/', user_views.doctores, name='doctores'),
+    path('citas/', user_views.mis_citas, name='citas'),
+    path('consul/', user_views.consultorio, name='consultorio'),
     path('especialidades/', user_views.especialidades, name='especialidades'),
     path('login/', auth_views.LoginView.as_view(template_name='user/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='user/logout.html'), name='logout'),

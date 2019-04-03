@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, PerfilesUpdateForm
-from .models import Especialidades, perfiles
+from .forms import UserRegisterForm, UserUpdateForm, PerfilesUpdateForm, UserAgendaForm
+from .models import Especialidades, perfiles, Doctors, Consultorios, Agendar_cita
 #funcion de registro manda en automatico el formulario
 def register(request):
     if request.method == 'POST':
@@ -46,3 +46,37 @@ def especialidades(request):
 
 def perfil(request):   
     return render(request, 'user/perfil.html')
+
+def doctores(request):  
+    context ={
+        'pos': Doctors.objects.all()
+    }   
+    return render(request, 'user/doc.html', context)
+
+def consultorio(request):
+    context ={
+        'post': Consultorios.objects.all()
+    }
+    return render(request, 'user/consult.html', context)
+
+def agendar(request):
+    if request.method == 'POST': 
+        a_form = UserAgendaForm(request.POST)
+        if a_form.is_valid() :
+            a_form.save()
+            messages.success(request, f'Tu Cita a sido marcada!')
+            return redirect('agendar')            
+
+    else:
+        a_form = UserAgendaForm()        
+    context = {
+        'a_form': a_form
+    }
+
+    return render(request, 'user/agendar_cita.html', context)
+
+def mis_citas(request):  
+    context ={
+        'pots': Agendar_cita.objects.filter()
+    }   
+    return render(request, 'user/mis_citas.html', context)

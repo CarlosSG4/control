@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+<h1>Mis Citas</h1>
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Curp</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Turno</th>
+        <th scope="col">Especialidad</th>
+        <th scope="col">Doctor</th>
+        <th scope="col">Consultorio</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+    {% for mis_citas in pots %}
+        <tr>
+        <td>{{mis_citas.nombre}}</td>
+        <td>{{mis_citas.apellidos}}</td>
+        <td>{{mis_citas.curp}}</td>
+        <td>{{mis_citas.genero}}</td>
+        <td>{{mis_citas.fecha}}</td>
+        <td>{{mis_citas.Turno}}</td>
+        <td>{{mis_citas.especialidad}}</td>
+        <td>{{mis_citas.doctor}}</td>
+        <td>{{mis_citas.consultorio}}</td>
+
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
